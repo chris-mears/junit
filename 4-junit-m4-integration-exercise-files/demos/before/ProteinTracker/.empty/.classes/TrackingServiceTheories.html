@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TrackingServiceTheories</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TrackingServiceTheories (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TrackingServiceTheories</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;import static org.junit.Assert.assertTrue;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.junit.Assume;
+<i>4</i>&nbsp;import org.junit.experimental.theories.DataPoints;
+<i>5</i>&nbsp;import org.junit.experimental.theories.Theories;
+<i>6</i>&nbsp;import org.junit.experimental.theories.Theory;
+<i>7</i>&nbsp;import org.junit.runner.RunWith;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import com.simpleprogrammer.proteintracker.TrackingService;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;@RunWith(Theories.class)
+<b class="fc"><i>13</i>&nbsp;public class TrackingServiceTheories {</b>
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;	@DataPoints
+<i>16</i>&nbsp;	public static int[] data() {
+<b class="fc"><i>17</i>&nbsp;		return new int[] {</b>
+<i>18</i>&nbsp;				1, 5, 10, 15, 20, 50, -4
+<i>19</i>&nbsp;		};
+<i>20</i>&nbsp;	}
+<i>21</i>&nbsp;	
+<i>22</i>&nbsp;	@Theory
+<i>23</i>&nbsp;	public void postiveValuesShouldAlwaysHavePositiveTotals(int value) {
+<b class="fc"><i>24</i>&nbsp;		TrackingService service = new TrackingService();</b>
+<b class="fc"><i>25</i>&nbsp;		service.addProtein(value);</b>
+<i>26</i>&nbsp;		
+<b class="fc"><i>27</i>&nbsp;		Assume.assumeTrue(value &gt; 0);</b>
+<i>28</i>&nbsp;		
+<b class="fc"><i>29</i>&nbsp;		assertTrue(service.getTotal() &gt; 0);</b>
+<b class="fc"><i>30</i>&nbsp;	}</b>
+<i>31</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-01-11 11:49</div>
+</div>
+</body>
+</html>
